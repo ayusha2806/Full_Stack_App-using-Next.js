@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
 import Layout from "../components/layout/Layout";
 import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_MEETUPS = [
   {
-    id: "id_1",
+    id: "m1",
     title: "A First Meetup",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg",
@@ -11,7 +12,7 @@ const DUMMY_MEETUPS = [
     description: "This is a first meetup!",
   },
   {
-    id: "id_2",
+    id: "m2",
     title: "A Second Meetup",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg",
@@ -20,11 +21,31 @@ const DUMMY_MEETUPS = [
   },
 ];
 
-function HomePage() {
-  return(
-  <Layout>
-    <MeetupList meetups={DUMMY_MEETUPS} />;
-  </Layout>)
+function HomePage(props) {
+  
+  // useEffect(() => {
+  //   setLoadedMeetups(DUMMY_MEETUPS);
+  // }, []);
+  
+  return (
+    <Layout>
+      <MeetupList meetups={props.meetups} />;
+    </Layout>
+  );
+}
+
+export async function getServerSideProps(context){
+  const req =context.req;
+  const res = context.res;
+
+
+// export async function getStaticProps(){
+  
+  return{
+    props:{
+      meetups:DUMMY_MEETUPS
+    }
+  };
 }
 
 export default HomePage;

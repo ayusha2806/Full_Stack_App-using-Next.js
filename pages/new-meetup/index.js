@@ -9,4 +9,5 @@ function NewMeetupPage() {
   return <NewMeetupForm onAddMeetup={addMeetupHandler} />
 }
 
+
 export default NewMeetupPage;
