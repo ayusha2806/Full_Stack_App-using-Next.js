@@ -22,7 +22,7 @@
 
 .content h3 {
   font-size: 1.25rem;
-  color: #2c292b;
+  color: #1994ff;
 }
 
 .actions {
@@ -33,8 +33,8 @@
 .actions button {
   font: inherit;
   cursor: pointer;
-  color: #77002e;
-  border: 1px solid #77002e;
+  color: #33acf7;
+  border: 1px solid #51b4fa;
   background-color: transparent;
   padding: 0.5rem 1.5rem;
   border-radius: 4px;
